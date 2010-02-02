@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s|
   s.name = 'acamargo-geoip_city'
-  s.version = '0.1.0'
+  s.version = '1.0'
 
   s.author = "André Camargo"
   s.email = "andre@boaideia.inf.br"
