@@ -63,23 +63,23 @@ Some variation of the following should work.
   [maxmind](http://www.maxmind.com/app/c).
   For example, I like to install mine in `/opt/GeoIP`, so I do this:
 
-       tar -zxvf GeoIP-1.4.3.tar.gz 
+         tar -zxvf GeoIP-1.4.3.tar.gz 
 
-       cd GeoIP-1.4.3
+         cd GeoIP-1.4.3
 
-       ./configure --prefix=/opt/GeoIP
+         ./configure --prefix=/opt/GeoIP
 
-       make && sudo make install
+         make && sudo make install
 
   2. Now install the `geoip_city` gem 
 
-       sudo gem install acamargo-geoip_city -s http://gems.github.com/ -- --with-geoip-dir=/opt/GeoIP
+         sudo gem install acamargo-geoip_city -s http://gems.github.com/ -- --with-geoip-dir=/opt/GeoIP
 
   3. Download the GeoLite City database file in binary format at http://www.maxmind.com/app/geolitecity
      Maybe this [direct link](http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz) will work. 
      I put this file in 
 
-       /opt/GeoIP/share/GeoIP/GeoLiteCity.dat
+         /opt/GeoIP/share/GeoIP/GeoLiteCity.dat
 
   4. Use it!
 
