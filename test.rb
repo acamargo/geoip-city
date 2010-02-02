@@ -22,32 +22,34 @@ class GeoIPTest < Test::Unit::TestCase
     h = db.look_up('24.24.24.24')
     #debugger
     assert_kind_of Hash, h
-    assert_equal 'Ithaca', h[:city]
+    assert_equal 'Jamaica', h[:city]
+    assert_equal 'New York', h[:region_name]
+    assert_equal 'NY', h[:region]
     assert_equal 'United States', h[:country_name]
   end
 
   def test_construction_index
     db = GeoIPCity::Database.new(@dbfile, :index)
     h = db.look_up('24.24.24.24')
-    assert_equal 'Ithaca', h[:city]
+    assert_equal 'Jamaica', h[:city]
   end
 
   def test_construction_filesystem
     db = GeoIPCity::Database.new(@dbfile, :filesystem)
     h = db.look_up('24.24.24.24')
-    assert_equal 'Ithaca', h[:city]
+    assert_equal 'Jamaica', h[:city]
   end
 
   def test_construction_memory
     db = GeoIPCity::Database.new(@dbfile, :memory)
     h = db.look_up('24.24.24.24')
-    assert_equal 'Ithaca', h[:city]
+    assert_equal 'Jamaica', h[:city]
   end
 
   def test_construction_filesystem_check
     db = GeoIPCity::Database.new(@dbfile, :filesystem, true)
     h = db.look_up('24.24.24.24')
-    assert_equal 'Ithaca', h[:city]
+    assert_equal 'Jamaica', h[:city]
   end
 
   def test_bad_db_file

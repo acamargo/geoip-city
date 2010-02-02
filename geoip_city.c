@@ -79,6 +79,8 @@ VALUE rb_record_to_hash (GeoIPRecord *record)
     rb_hash_sset(hash, "country_name", rb_str_new2(record->country_name));
   if(record->region)
     rb_hash_sset(hash, "region", rb_str_new2(record->region));
+  if(record->country_code && record->region)
+    rb_hash_sset(hash, "region_name", rb_str_new2(GeoIP_region_name_by_code(record->country_code, record->region)));
   if(record->city)
     rb_hash_sset(hash, "city", rb_str_new2(record->city));
   if(record->postal_code)
@@ -102,7 +104,7 @@ VALUE rb_record_to_hash (GeoIPRecord *record)
  *        :country_code=>"US", :longitude=>-76.4981994628906, 
  *        :country_code3=>"USA", :dma_code=>555, 
  *        :country_name=>"United States", :area_code=>607, 
- *        :region=>"NY"} 
+ *        :region=>"NY", :region_name=>"New York"} 
  */ 
 VALUE rb_geoip_look_up(VALUE self, VALUE addr) {
   GeoIP *gi;

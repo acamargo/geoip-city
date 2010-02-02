@@ -18,15 +18,17 @@ Usage
     db = GeoIPCity::Database.new('/opt/GeoIP/share/GeoIP/GeoLiteCity.dat')
     result = db.look_up('24.24.24.24')
     p result 
-    # => {:city=>"Ithaca", 
-    #     :latitude=>42.4277992248535, 
-    #     :longitude=>-76.4981994628906, 
-    #     :country_code3=>"USA", 
+    # => {:country_code3=>"USA",
+    #     :latitude=>40.6763000488281,
+    #     :country_name=>"United States",
+    #     :longitude=>-73.7751998901367,
+    #     :region=>"NY",
+    #     :dma_code=>501,
+    #     :region_name=>"New York",
+    #     :area_code=>718,
+    #     :city=>"Jamaica",
     #     :country_code=>"US",
-    #     :country_name=>"United States", 
-    #     :dma_code=>555,
-    #     :area_code=>607, 
-    #     :region=>"NY" }
+    #     :postal_code=>"11434"}
 
 There are arguments to database initializer.
 
@@ -71,7 +73,7 @@ Some variation of the following should work.
 
   2. Now install the `geoip_city` gem 
 
-       sudo gem install geoip_city -- --with-geoip-dir=/opt/GeoIP
+       sudo gem install acamargo-geoip_city -s http://gems.github.com/ -- --with-geoip-dir=/opt/GeoIP
 
   3. Download the GeoLite City database file in binary format at http://www.maxmind.com/app/geolitecity
      Maybe this [direct link](http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz) will work. 
