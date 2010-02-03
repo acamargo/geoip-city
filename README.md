@@ -73,7 +73,7 @@ Some variation of the following should work.
 
   2. Now install the `geoip_city` gem 
 
-         sudo gem install acamargo-geoip_city -s http://gemcutter.com/ -- --with-geoip-dir=/opt/GeoIP
+         sudo gem install acamargo-geoip_city -s http://gemcutter.org -- --with-geoip-dir=/opt/GeoIP
 
   3. Download the GeoLite City database file in binary format at http://www.maxmind.com/app/geolitecity
      Maybe this [direct link](http://www.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz) will work. 
